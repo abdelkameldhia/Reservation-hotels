@@ -4,89 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAYEFTY - Réservation Vacances ☀️</title>
-    <!-- Tailwind CSS pour un design moderne et rapide -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts pour une écriture festive -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-amber-50 via-teal-50 to-cyan-100 min-h-screen text-slate-800">
 
-    <!-- Header / Navbar -->
     <header class="bg-amber-400 p-4 shadow-md flex justify-between items-center text-white">
         <h1 class="text-3xl font-extrabold tracking-wider flex items-center gap-2">
-            ☀️ SAYEFTY <span class="text-sm font-normal bg-teal-600 px-2 py-1 rounded-full text-white">Chorba & Jwabi</span>
+            ☀️ SAYEFTY
         </h1>
         <p class="font-semibold hidden sm:block">مرحبا بيك في جو الصيف! 🏖️</p>
     </header>
 
-    <!-- Main Content -->
     <main class="max-w-4xl mx-auto my-10 p-6 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-teal-100">
         
         <h2 class="text-2xl font-bold text-teal-700 text-center mb-8 flex justify-center items-center gap-2">
             🌊 احجز بلاصتك في الشمس
         </h2>
 
-        <!-- Formulaire de Réservation -->
         <form id="reservationForm" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-4">
+                <label class="block text-amber-800 font-bold text-lg">
+                    🏨 اختر 3 نزل أو إقامات مفضلة لديك (حسب الأولوية):
+                </label>
                 
-                <!-- Colonne 1: Choix de l'Hôtel / Résidence -->
-                <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200">
-                    <label class="block text-amber-800 font-bold mb-3 text-lg" for="hotel">
-                        🏨 اختر النزل أو الإقامة:
-                    </label>
-                    <select id="hotel" required class="w-full p-3 rounded-xl border-2 border-amber-300 bg-white focus:outline-none focus:border-amber-500 transition-all text-gray-700 font-medium">
-                        <option value="" disabled selected>-- اختر الوجهة متاعك --</option>
-                        <optgroup label="Hotels 5 Stars ⭐⭐⭐⭐⭐">
-                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">1️⃣ الخيار الأول (الأهم):</span>
+                        <select id="hotel1" name="hotel1" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الأول --</option>
                             <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
-                            <option value="The Residence Tunis">The Residence (Tunis)</option>
-                        </optgroup>
-                        <optgroup label="Résidences de Charme 🏡">
-                            <option value="Résidence Dar El Gaïed (Nabeul)">Dar El Gaïed (Nabeul)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
                             <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
                             <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
-                        </optgroup>
+                        </select>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">2️⃣ الخيار الثاني:</span>
+                        <select id="hotel2" name="hotel2" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الثاني --</option>
+                            <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                            <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
+                            <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">3️⃣ الخيار الثالث:</span>
+                        <select id="hotel3" name="hotel3" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الثالث --</option>
+                            <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                            <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
+                            <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-teal-50/60 p-5 rounded-2xl border border-teal-200">
+                    <label class="block text-teal-800 font-bold mb-3 text-lg" for="chambre">
+                        🛏️ نوع الغرفة المفضل:
+                    </label>
+                    <select id="chambre" name="chambre" required class="w-full p-3 rounded-xl border-2 border-teal-300 bg-white focus:outline-none">
+                        <option value="" disabled selected>-- اختر نوع الغرفة --</option>
+                        <option value="Chambre Single (فردية)">Chambre Single (فردية)</option>
+                        <option value="Chambre Double (مزدوجة)">Chambre Double (مزدوجة)</option>
+                        <option value="Chambre Familiale (عائلية)">Chambre Familiale (عائلية)</option>
                     </select>
                 </div>
 
-                <!-- Colonne 2: Les Dates -->
                 <div class="bg-teal-50/60 p-5 rounded-2xl border border-teal-200">
                     <label class="block text-teal-800 font-bold mb-3 text-lg">
                         📅 تاريخ الإقامة:
                     </label>
-                    <div class="space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <span class="text-xs font-semibold text-teal-600 block mb-1">من (Check-in):</span>
-                            <input type="date" id="dateArrivee" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white focus:outline-none focus:border-teal-500 transition-all">
+                            <span class="text-xs font-semibold text-teal-600 block mb-1">من:</span>
+                            <input type="date" id="dateArrivee" name="dateArrivee" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white">
                         </div>
                         <div>
-                            <span class="text-xs font-semibold text-teal-600 block mb-1">إلى (Check-out):</span>
-                            <input type="date" id="dateDepart" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white focus:outline-none focus:border-teal-500 transition-all">
+                            <span class="text-xs font-semibold text-teal-600 block mb-1">إلى:</span>
+                            <input type="date" id="dateDepart" name="dateDepart" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white">
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Infos Client supplémentaires (Optionnel mais important pour le récap) -->
-            <div class="p-4 bg-slate-50 rounded-2xl border border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-1">الاسم واللقب:</label>
-                    <input type="text" id="clientName" placeholder="محمد بن علي" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+            <div class="p-5 bg-slate-50 rounded-2xl border border-gray-200 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">الاسم واللقب:</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="محمد بن علي" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">📱 رقم الهاتف (الآلي):</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" placeholder="22123456" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">عدد الأشخاص:</label>
+                        <input type="number" id="pax" name="pax" min="1" value="2" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
                 </div>
+                
                 <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-1">عدد الأشخاص:</label>
-                    <input type="number" id="pax" min="1" value="2" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    <label class="block text-sm font-semibold text-gray-600 mb-1">📝 طلبات خاصة أخرى:</label>
+                    <textarea id="description" name="description" rows="2" placeholder="أية ملاحظات تود إضافتها..." class="w-full p-2 rounded-xl border border-gray-300 bg-white"></textarea>
                 </div>
             </div>
 
-            <!-- Bouton Réserver -->
             <div class="text-center pt-4">
-                <button type="submit" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg transform hover:scale-105 transition-all cursor-pointer">
+                <button type="submit" id="submitBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg transform hover:scale-105 transition-all cursor-pointer">
                     🌊 احجز توة وعوم بحرك!
                 </button>
             </div>
@@ -94,99 +129,67 @@
 
         <hr class="my-10 border-dashed border-teal-200">
 
-        <!-- Section Lien / Résultat Récapitulatif -->
         <div id="recapSection" class="hidden bg-emerald-50 border-2 border-emerald-400 p-6 rounded-3xl transition-all">
             <div class="flex items-center gap-3 text-emerald-700 font-bold text-xl mb-4">
                 <span>✅</span>
-                <h3>تمت عملية الحجز بنجاح!</h3>
+                <h3>تم تسجّيل حجزك بنجاح في نظامنا!</h3>
             </div>
-            <p class="text-sm text-slate-600 mb-4">
-                انقر على الرابط أسفله لمشاهدة وتنزيل وصل الحجز الخاص بك (Ticket de réservation):
-            </p>
             
-            <!-- Lien de Réservation généré -->
             <a id="recapLink" href="#" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition-all mb-4">
-                🔗 اضغط هنا لعرض تفاصيل الحجز الشاملة
+                🔗 اضغط هنا لعرض تفاصيل الحجز الشاملة وطباعتها
             </a>
-
-            <!-- Affichage rapide sur place -->
-            <div class="bg-white p-4 rounded-xl border border-emerald-200 text-sm space-y-2 mt-2">
-                <p><strong>📍 المكان:</strong> <span id="resHotel" class="text-teal-700 font-semibold"></span></p>
-                <p><strong>📅 المدة:</strong> من <span id="resDe" class="font-semibold"></span> إلى <span id="resA" class="font-semibold"></span></p>
-                <p><strong>👤 الاسم:</strong> <span id="resNom"></span></p>
-                <p><strong>👥 العدد:</strong> <span id="resPax"></span> أشخاص</p>
-            </div>
         </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center text-xs text-slate-500 pb-10">
-        <p>© 2026 SAYEFTY Platform. Made with ☀️ and 🌊.</p>
-    </footer>
-
-    <!-- JavaScript logic -->
     <script>
         document.getElementById('reservationForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // منع الصفحة من التحديث
-
-            // جلب البيانات من الفورم
-            const hotel = document.getElementById('hotel').value;
-            const dateArrivee = document.getElementById('dateArrivee').value;
-            const dateDepart = document.getElementById('dateDepart').value;
-            const name = document.getElementById('clientName').value;
-            const pax = document.getElementById('pax').value;
-
-            // تعبئة البيانات في خانة التلخيص السريع
-            document.getElementById('resHotel').innerText = hotel;
-            document.getElementById('resDe').innerText = dateArrivee;
-            document.getElementById('resA').innerText = dateDepart;
-            document.getElementById('resNom').innerText = name;
-            document.getElementById('resPax').innerText = pax;
-
-            // إظهار القسم الخاص بالرابط والنتيجة
-            document.getElementById('recapSection').classList.remove('hidden');
-
-            // صنع رابط ديناميكي مشفر فيه البيانات الكل (باش كيف يضغط عليه تخرجلو صفحة نظيفة)
-            // في العادة نبعثوها لصفحة أخرى، لهنا استعملت ميزة "data:text/html" باش تفتح صفحة جديدة بالوقت فيها الفاتورة
-            const invoiceHTML = `
-                <html>
-                <head>
-                    <title>Ticket de Réservation - ${name}</title>
-                    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                </head>
-                <body class="bg-gray-100 p-8 flex justify-center items-center min-h-screen">
-                    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border-t-8 border-yellow-400">
-                        <div class="text-center mb-6">
-                            <h1 class="text-2xl font-bold text-gray-800">☀️ SAYEFTY RESA</h1>
-                            <p class="text-sm text-green-600 font-semibold">CONFIRMATION DU SÉJOUR</p>
-                        </div>
-                        <div class="border-b-2 border-dashed my-4"></div>
-                        <div class="space-y-4 text-gray-700">
-                            <div><span class="text-xs text-gray-400 block">NOM DU CLIENT:</span> <span class="font-bold">${name}</span></div>
-                            <div><span class="text-xs text-gray-400 block">DESTINATION:</span> <span class="font-bold text-teal-600">${hotel}</span></div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div><span class="text-xs text-gray-400 block">CHECK-IN:</span> <span class="font-semibold">${dateArrivee}</span></div>
-                                <div><span class="text-xs text-gray-400 block">CHECK-OUT:</span> <span class="font-semibold">${dateDepart}</span></div>
-                            </div>
-                            <div><span class="text-xs text-gray-400 block">PERSONNES:</span> <span class="font-bold">${pax} Pax</span></div>
-                        </div>
-                        <div class="border-b-2 border-dashed my-4"></div>
-                        <p class="text-center text-xs text-gray-400 italic">Merci pour votre confiance, bon séjour ! 🏖️</p>
-                        <div class="mt-6 text-center">
-                            <button onclick="window.print()" class="bg-blue-500 text-white text-xs px-4 py-2 rounded-lg shadow hover:bg-blue-600">Imprimer le ticket</button>
-                        </div>
-                    </div>
-                </body>
-                </html>
-            `;
-
-            // تحويل الكود لـ URL وإسناده للرابط
-            const blob = new Blob([invoiceHTML], { type: 'text/html' });
-            document.getElementById('recapLink').href = URL.createObjectURL(blob);
+            e.preventDefault();
             
-            // Scroll لأسفل الصفحة باش يشوف النتيجة
-            document.getElementById('recapSection').scrollIntoView({ behavior: 'smooth' });
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "جاري تسجيل الحجز... ⏳";
+            btn.disabled = true;
+
+            // ⚠️ ضع رابط الـ Web App المنسوخ من الجوجل سكريبت هنا:
+            const googleScriptUrl = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+            const formData = new FormData(this);
+
+            // إرسال البيانات لـ Google Sheets
+            fetch(googleScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                btn.innerText = "🌊 احجز توة وعوم بحرك!";
+                btn.disabled = false;
+                
+                document.getElementById('recapSection').classList.remove('hidden');
+                
+                // جلب القيم لصنع التوصيل للزبون
+                const name = document.getElementById('clientName').value;
+                const phone = document.getElementById('clientPhone').value;
+                const h1 = document.getElementById('hotel1').value;
+                const h2 = document.getElementById('hotel2').value;
+                const h3 = document.getElementById('hotel3').value;
+                const chambre = document.getElementById('chambre').value;
+                const dateArrivee = document.getElementById('dateArrivee').value;
+                const dateDepart = document.getElementById('dateDepart').value;
+                const pax = document.getElementById('pax').value;
+                const desc = document.getElementById('description').value;
+
+                // كود الـ Ticket اللي تفتح في صفحة جديدة وفها الاختيارات الـ 3
+                const invoiceHTML = `<html><head><title>Ticket</title><link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"></head><body class="bg-gray-100 p-8 flex justify-center items-center min-h-screen"><div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border-t-8 border-amber-400"><div class="text-center mb-4"><h1 class="text-2xl font-bold">☀️ SAYEFTY RESA</h1><p class="text-green-600 font-semibold">CONFIRMATION</p></div><div class="space-y-3 text-sm text-gray-700"><p><strong>CLIENT:</strong> ${name}</p><p><strong>TEL:</strong> ${phone}</p><div class="p-2 bg-yellow-50 rounded-lg"><p class="font-semibold text-amber-800">CHOIX DES HÔTELS:</p><p class="pl-2">1. ${h1}</p><p class="pl-2">2. ${h2}</p><p class="pl-2">3. ${h3}</p></div><p><strong>CHAMBRE:</strong> ${chambre}</p><p><strong>DU:</strong> ${dateArrivee} <strong>AU:</strong> ${dateDepart}</p><p><strong>PAX:</strong> ${pax}</p><p><strong>NOTE:</strong> ${desc || '-'}</p></div><button onclick="window.print()" class="w-full mt-6 bg-blue-500 text-white py-2 rounded-xl">Imprimer</button></div></body></html>`;
+                
+                const blob = new Blob([invoiceHTML], { type: 'text/html' });
+                document.getElementById('recapLink').href = URL.createObjectURL(blob);
+                document.getElementById('recapSection').scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                alert("حدث خطأ في الاتصال، حاول مجدداً.");
+                btn.disabled = false;
+            });
         });
     </script>
 </body>
