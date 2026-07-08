@@ -12,7 +12,6 @@
 </head>
 <body class="bg-gradient-to-br from-amber-50 via-teal-50 to-cyan-100 min-h-screen text-slate-800" dir="rtl">
 
-    <!-- Header مع الشعار والاسم الجديد -->
     <header class="bg-amber-400 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center text-white gap-4">
         <div class="flex items-center gap-3">
             <h1 class="text-2xl font-black tracking-wider">
@@ -20,10 +19,8 @@
             </h1>
         </div>
         
-        <!-- شعار الـ STEG بالأزرق والأحمر المضمون -->
         <div class="flex items-center bg-white p-2 rounded-xl shadow-sm min-w-[130px] justify-center min-h-[55px]">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/STEG_Logo.svg" alt="STEG" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('steg-text-fallback').classList.remove('hidden');">
-            <!-- الشعار التكتيكي الملون بالأزرق والأحمر يخدم ديما -->
             <div id="steg-text-fallback" class="hidden text-center select-none">
                 <span class="text-blue-600 font-black text-2xl tracking-tighter">ST</span><span class="text-red-600 font-black text-2xl tracking-tighter">EG</span>
                 <span class="block text-[9px] text-gray-500 font-bold -mt-1 tracking-widest">TUNISIE</span>
@@ -41,103 +38,86 @@
 
         <form id="reservationForm" class="space-y-6">
             
-            <!-- قسم اختيار 3 نزل المفضلة منظم حسب المدن -->
             <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-4 text-right">
                 <label class="block text-amber-800 font-bold text-lg">
                     🏨 اختر 3 نزل أو إقامات مفضلة لديك (حسب الأولوية):
                 </label>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- 1️⃣ الخيار الأول -->
                     <div>
                         <span class="text-xs font-semibold text-amber-700 block mb-1">1️⃣ الخيار الأول (الأهم):</span>
                         <select id="hotel1" name="hotel1" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none font-semibold">
                             <option value="" disabled selected>-- النزل الأول --</option>
-                            <optgroup label="📍 مدينة سوسة / المنستير">
-                                <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick</option>
-                                <option value="Hôtel Iberostar Sousse">Hôtel Iberostar</option>
-                                <option value="Hôtel Marhaba Sousse">Hôtel Marhaba</option>
-                            </optgroup>
                             <optgroup label="📍 مدينة الحمامات">
-                                <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi</option>
-                                <option value="Hôtel Hasdrubal Hammamet">Hôtel Hasdrubal</option>
+                                <option value="Hôtel El Mouradi Hammamet (5670)">Hôtel El Mouradi [5670]</option>
+                                <option value="Hôtel Hasdrubal Hammamet (5681)">Hôtel Hasdrubal [5681]</option>
+                            </optgroup>
+                            <optgroup label="📍 مدينة سوسة / المنستير">
+                                <option value="Hôtel Mövenpick Sousse (1240)">Hôtel Mövenpick [1240]</option>
+                                <option value="Hôtel Iberostar Sousse (1255)">Hôtel Iberostar [1255]</option>
+                                <option value="Hôtel Marhaba Sousse (1260)">Hôtel Marhaba [1260]</option>
                             </optgroup>
                             <optgroup label="📍 مدينة تونس / قمرت">
-                                <option value="Hôtel The Residence Gammarth">The Residence</option>
-                                <option value="Hôtel Mövenpick Gammarth">Mövenpick Gammarth</option>
+                                <option value="Hôtel The Residence Gammarth (3110)">The Residence [3110]</option>
+                                <option value="Hôtel Mövenpick Gammarth (3125)">Mövenpick Gammarth [3125]</option>
                             </optgroup>
                             <optgroup label="📍 جزيرة جربة / جرجيس">
-                                <option value="Dar Dhiafa Djerba">Dar Dhiafa</option>
-                                <option value="Hôtel Radisson Blu Djerba">Radisson Blu</option>
-                            </optgroup>
-                            <optgroup label="📍 جهات أخرى (قليبية / طبرقة)">
-                                <option value="Résidence Les Dunes Kelibia">Les Dunes (قليبية)</option>
-                                <option value="Hôtel La Cigale Tabarka">La Cigale (طبرقة)</option>
+                                <option value="Dar Dhiafa Djerba (7015)">Dar Dhiafa [7015]</option>
+                                <option value="Hôtel Radisson Blu Djerba (7030)">Radisson Blu [7030]</option>
                             </optgroup>
                         </select>
                     </div>
 
-                    <!-- 2️⃣ الخيار الثاني -->
                     <div>
                         <span class="text-xs font-semibold text-amber-700 block mb-1">2️⃣ الخيار الثاني:</span>
                         <select id="hotel2" name="hotel2" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none font-semibold">
                             <option value="" disabled selected>-- النزل الثاني --</option>
-                            <optgroup label="📍 مدينة سوسة / المنستير">
-                                <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick</option>
-                                <option value="Hôtel Iberostar Sousse">Hôtel Iberostar</option>
-                                <option value="Hôtel Marhaba Sousse">Hôtel Marhaba</option>
-                            </optgroup>
                             <optgroup label="📍 مدينة الحمامات">
-                                <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi</option>
-                                <option value="Hôtel Hasdrubal Hammamet">Hôtel Hasdrubal</option>
+                                <option value="Hôtel El Mouradi Hammamet (5670)">Hôtel El Mouradi [5670]</option>
+                                <option value="Hôtel Hasdrubal Hammamet (5681)">Hôtel Hasdrubal [5681]</option>
+                            </optgroup>
+                            <optgroup label="📍 مدينة سوسة / المنستير">
+                                <option value="Hôtel Mövenpick Sousse (1240)">Hôtel Mövenpick [1240]</option>
+                                <option value="Hôtel Iberostar Sousse (1255)">Hôtel Iberostar [1255]</option>
+                                <option value="Hôtel Marhaba Sousse (1260)">Hôtel Marhaba [1260]</option>
                             </optgroup>
                             <optgroup label="📍 مدينة تونس / قمرت">
-                                <option value="Hôtel The Residence Gammarth">The Residence</option>
-                                <option value="Hôtel Mövenpick Gammarth">Mövenpick Gammarth</option>
+                                <option value="Hôtel The Residence Gammarth (3110)">The Residence [3110]</option>
+                                <option value="Hôtel Mövenpick Gammarth (3125)">Mövenpick Gammarth [3125]</option>
                             </optgroup>
                             <optgroup label="📍 جزيرة جربة / جرجيس">
-                                <option value="Dar Dhiafa Djerba">Dar Dhiafa</option>
-                                <option value="Hôtel Radisson Blu Djerba">Radisson Blu</option>
-                            </optgroup>
-                            <optgroup label="📍 جهات أخرى (قليبية / طبرقة)">
-                                <option value="Résidence Les Dunes Kelibia">Les Dunes (قليبية)</option>
-                                <option value="Hôtel La Cigale Tabarka">La Cigale (طبرقة)</option>
+                                <option value="Dar Dhiafa Djerba (7015)">Dar Dhiafa [7015]</option>
+                                <option value="Hôtel Radisson Blu Djerba (7030)">Radisson Blu [7030]</option>
                             </optgroup>
                         </select>
                     </div>
 
-                    <!-- 3️⃣ الخيار الثالث -->
                     <div>
                         <span class="text-xs font-semibold text-amber-700 block mb-1">3️⃣ الخيار الثالث:</span>
                         <select id="hotel3" name="hotel3" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none font-semibold">
                             <option value="" disabled selected>-- النزل الثالث --</option>
-                            <optgroup label="📍 مدينة سوسة / المنستير">
-                                <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick</option>
-                                <option value="Hôtel Iberostar Sousse">Hôtel Iberostar</option>
-                                <option value="Hôtel Marhaba Sousse">Hôtel Marhaba</option>
-                            </optgroup>
                             <optgroup label="📍 مدينة الحمامات">
-                                <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi</option>
-                                <option value="Hôtel Hasdrubal Hammamet">Hôtel Hasdrubal</option>
+                                <option value="Hôtel El Mouradi Hammamet (5670)">Hôtel El Mouradi [5670]</option>
+                                <option value="Hôtel Hasdrubal Hammamet (5681)">Hôtel Hasdrubal [5681]</option>
+                            </optgroup>
+                            <optgroup label="📍 مدينة سوسة / المنستير">
+                                <option value="Hôtel Mövenpick Sousse (1240)">Hôtel Mövenpick [1240]</option>
+                                <option value="Hôtel Iberostar Sousse (1255)">Hôtel Iberostar [1255]</option>
+                                <option value="Hôtel Marhaba Sousse (1260)">Hôtel Marhaba [1260]</option>
                             </optgroup>
                             <optgroup label="📍 مدينة تونس / قمرت">
-                                <option value="Hôtel The Residence Gammarth">The Residence</option>
-                                <option value="Hôtel Mövenpick Gammarth">Mövenpick Gammarth</option>
+                                <option value="Hôtel The Residence Gammarth (3110)">The Residence [3110]</option>
+                                <option value="Hôtel Mövenpick Gammarth (3125)">Mövenpick Gammarth [3125]</option>
                             </optgroup>
                             <optgroup label="📍 جزيرة جربة / جرجيس">
-                                <option value="Dar Dhiafa Djerba">Dar Dhiafa</option>
-                                <option value="Hôtel Radisson Blu Djerba">Radisson Blu</option>
-                            </optgroup>
-                            <optgroup label="📍 جهات أخرى (قليبية / طبرقة)">
-                                <option value="Résidence Les Dunes Kelibia">Les Dunes (قليبية)</option>
-                                <option value="Hôtel La Cigale Tabarka">La Cigale (طبرقة)</option>
+                                <option value="Dar Dhiafa Djerba (7015)">Dar Dhiafa [7015]</option>
+                                <option value="Hôtel Radisson Blu Djerba (7030)">Radisson Blu [7030]</option>
                             </optgroup>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <!-- بقية البيانات: الغرف والتواريخ -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-right">
                 <div class="bg-teal-50/60 p-5 rounded-2xl border border-teal-200">
                     <label class="block text-teal-800 font-bold mb-3 text-lg" for="chambre">
@@ -168,7 +148,6 @@
                 </div>
             </div>
 
-            <!-- معلومات العميل -->
             <div class="p-5 bg-slate-50 rounded-2xl border border-gray-200 space-y-4 text-right">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -247,16 +226,19 @@
                 const name = document.getElementById('clientName').value;
                 const phone = document.getElementById('clientPhone').value;
                 const robot = document.getElementById('clientRobot').value;
+                
+                // جلب القيم (الاسم والكود) لإظهارها في الوصل المطبوع
                 const h1 = document.getElementById('hotel1').value;
                 const h2 = document.getElementById('hotel2').value;
                 const h3 = document.getElementById('hotel3').value;
+                
                 const chambre = document.getElementById('chambre').value;
                 const dateArrivee = document.getElementById('dateArrivee').value;
                 const dateDepart = document.getElementById('dateDepart').value;
                 const pax = document.getElementById('pax').value;
                 const desc = document.getElementById('description').value;
 
-                // كود الوصل (Ticket) مع الشعار بالأزرق والأحمر ومجموعة الفنادق المختارة
+                // كود التذكرة (Ticket) المطبوعة تظهر الاسم والكود آلياً
                 const invoiceHTML = `
                 <!DOCTYPE html>
                 <html lang="ar" dir="rtl">
@@ -272,7 +254,6 @@
                 <body class="bg-gray-100 p-6 flex justify-center items-center min-h-screen">
                     <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border-t-8 border-blue-600 text-right">
                         
-                        <!-- الشعار الرسمي في الوصل بالأزرق والأحمر -->
                         <div class="flex justify-center mb-4 bg-gray-50 p-2 rounded-xl border border-gray-100 min-w-[130px] min-h-[60px] items-center">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/STEG_Logo.svg" alt="STEG" class="h-14 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('ticket-steg-text').classList.remove('hidden');">
                             <div id="ticket-steg-text" class="hidden text-center select-none">
@@ -296,8 +277,8 @@
                             </div>
                             
                             <div class="p-3 bg-blue-50/50 rounded-xl border border-blue-100">
-                                <span class="text-xs font-bold text-blue-800 block mb-2">🏨 النزل المختارة (حسب الأولوية):</span>
-                                <ol class="list-decimal list-inside space-y-1 text-xs text-gray-800 font-medium">
+                                <span class="text-xs font-bold text-blue-800 block mb-2">🏨 النزل المختارة [كود SEGA]:</span>
+                                <ol class="list-decimal list-inside space-y-1.5 text-xs text-gray-800 font-bold">
                                     <li>${h1}</li>
                                     <li>${h2}</li>
                                     <li>${h3}</li>
