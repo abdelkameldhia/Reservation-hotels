@@ -273,3 +273,259 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الحجوزات الصيفية ☀️</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-teal-50 to-cyan-100 min-h-screen text-slate-800" dir="rtl">
+
+    <header class="bg-amber-400 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center text-white gap-4">
+        <div class="flex items-center gap-3">
+            <h1 class="text-2xl font-black tracking-wider">
+                ☀️ منصة الحجوزات الصيفية
+            </h1>
+        </div>
+        
+        <div class="flex items-center bg-white p-2 rounded-xl shadow-sm min-w-[130px] justify-center min-h-[55px]">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/STEG_Logo.svg" alt="STEG" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('steg-text-fallback').classList.remove('hidden');">
+            <div id="steg-text-fallback" class="hidden text-center select-none">
+                <span class="text-blue-600 font-black text-2xl tracking-tighter">ST</span><span class="text-red-600 font-black text-2xl tracking-tighter">EG</span>
+                <span class="block text-[9px] text-gray-500 font-bold -mt-1 tracking-widest">TUNISIE</span>
+            </div>
+        </div>
+        
+        <p class="font-bold hidden sm:block">مرحبا بكم في فضاء الإصطياف! 🏖️</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto my-10 p-6 bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-teal-100">
+        
+        <h2 class="text-2xl font-bold text-teal-700 text-center mb-8 flex justify-center items-center gap-2">
+            🌊 احجز بلاصتك في الشمس
+        </h2>
+
+        <form id="reservationForm" class="space-y-6">
+            
+            <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-4 text-right">
+                <label class="block text-amber-800 font-bold text-lg">
+                    🏨 اختر 3 نزل أو إقامات مفضلة لديك (حسب الأولوية):
+                </label>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">1️⃣ الخيار الأول (الأهم):</span>
+                        <select id="hotel1" name="hotel1" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الأول --</option>
+                            <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                            <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
+                            <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">2️⃣ الخيار الثاني:</span>
+                        <select id="hotel2" name="hotel2" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الثاني --</option>
+                            <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                            <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
+                            <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-semibold text-amber-700 block mb-1">3️⃣ الخيار الثالث:</span>
+                        <select id="hotel3" name="hotel3" required class="w-full p-2 rounded-xl border-2 border-amber-300 bg-white text-sm focus:outline-none">
+                            <option value="" disabled selected>-- النزل الثالث --</option>
+                            <option value="Hôtel Mövenpick Sousse">Hôtel Mövenpick (Sousse)</option>
+                            <option value="Hôtel El Mouradi Hammamet">Hôtel El Mouradi (Hammamet)</option>
+                            <option value="Résidence Les Dunes (Kelibia)">Les Dunes (Kelibia)</option>
+                            <option value="Dar Dhiafa (Djerba)">Dar Dhiafa (Djerba)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-right">
+                <div class="bg-teal-50/60 p-5 rounded-2xl border border-teal-200">
+                    <label class="block text-teal-800 font-bold mb-3 text-lg" for="chambre">
+                        🛏️ نوع الغرفة المفضل:
+                    </label>
+                    <select id="chambre" name="chambre" required class="w-full p-3 rounded-xl border-2 border-teal-300 bg-white focus:outline-none">
+                        <option value="" disabled selected>-- اختر نوع الغرفة --</option>
+                        <option value="Chambre Single (فردية)">Chambre Single (فردية)</option>
+                        <option value="Chambre Double (مزدوجة)">Chambre Double (مزدوجة)</option>
+                        <option value="Chambre Familiale (عائلية)">Chambre Familiale (عائلية)</option>
+                    </select>
+                </div>
+
+                <div class="bg-teal-50/60 p-5 rounded-2xl border border-teal-200">
+                    <label class="block text-teal-800 font-bold mb-3 text-lg">
+                        📅 تاريخ الإقامة:
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-semibold text-teal-600 block mb-1">من:</span>
+                            <input type="date" id="dateArrivee" name="dateArrivee" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white">
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-teal-600 block mb-1">إلى:</span>
+                            <input type="date" id="dateDepart" name="dateDepart" required class="w-full p-2 rounded-xl border-2 border-teal-300 bg-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 bg-slate-50 rounded-2xl border border-gray-200 space-y-4 text-right">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">الاسم واللقب:</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="محمد بن علي" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">عدد الأشخاص:</label>
+                        <input type="number" id="pax" name="pax" min="1" value="2" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">📞 الهاتف:</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" placeholder="98123456" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1">🤖 الرقم الآلي:</label>
+                        <input type="text" id="clientRobot" name="clientRobot" placeholder="الرقم الآلي الخاص بالحساب" required class="w-full p-2 rounded-xl border border-gray-300 bg-white">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-600 mb-1">📝 طلبات خاصة أخرى:</label>
+                    <textarea id="description" name="description" rows="2" placeholder="أية ملاحظات أخرى تود إضافتها..." class="w-full p-2 rounded-xl border border-gray-300 bg-white"></textarea>
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button type="submit" id="submitBtn" class="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg transform hover:scale-105 transition-all cursor-pointer">
+                    🌊 احجز توة وعوم بحرك!
+                </button>
+            </div>
+        </form>
+
+        <hr class="my-10 border-dashed border-teal-200">
+
+        <div id="recapSection" class="hidden bg-emerald-50 border-2 border-emerald-400 p-6 rounded-3xl transition-all text-right">
+            <div class="flex items-center gap-3 text-emerald-700 font-bold text-xl mb-4">
+                <span>✅</span>
+                <h3>تم تسجّيل حجزك بنجاح في نظامنا!</h3>
+            </div>
+            
+            <a id="recapLink" href="#" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition-all mb-4">
+                🔗 اضغط هنا لعرض تفاصيل الحجز الشاملة وطباعتها
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "جاري تسجيل الحجز... ⏳";
+            btn.disabled = true;
+
+            // ⚠️ ضع رابط الـ Web App الخاص بك هنا بين علامتي التنصيص:
+            const googleScriptUrl = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+            const formData = new FormData(this);
+
+            fetch(googleScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                btn.innerText = "🌊 احجز توة وعوم بحرك!";
+                btn.disabled = false;
+                
+                document.getElementById('recapSection').classList.remove('hidden');
+                
+                const name = document.getElementById('clientName').value;
+                const phone = document.getElementById('clientPhone').value;
+                const robot = document.getElementById('clientRobot').value;
+                const h1 = document.getElementById('hotel1').value;
+                const h2 = document.getElementById('hotel2').value;
+                const h3 = document.getElementById('hotel3').value;
+                const chambre = document.getElementById('chambre').value;
+                const dateArrivee = document.getElementById('dateArrivee').value;
+                const dateDepart = document.getElementById('dateDepart').value;
+                const pax = document.getElementById('pax').value;
+                const desc = document.getElementById('description').value;
+
+                // كود الوصل (Ticket) مع الشعار بالأزرق والأحمر
+                const invoiceHTML = `
+                <!DOCTYPE html>
+                <html lang="ar" dir="rtl">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>وصل تأكيد الحجز - ${name}</title>
+                    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+                    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Cairo', sans-serif; }
+                    </style>
+                </head>
+                <body class="bg-gray-100 p-6 flex justify-center items-center min-h-screen">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border-t-8 border-blue-600 text-right">
+                        
+                        <div class="flex justify-center mb-4 bg-gray-50 p-2 rounded-xl border border-gray-100 min-w-[130px] min-h-[60px] items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/STEG_Logo.svg" alt="STEG" class="h-14 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('ticket-steg-text').classList.remove('hidden');">
+                            <div id="ticket-steg-text" class="hidden text-center select-none">
+                                <span class="text-blue-600 font-black text-2xl tracking-tighter">ST</span><span class="text-red-600 font-black text-2xl tracking-tighter">EG</span>
+                                <span class="block text-[10px] text-gray-500 font-bold -mt-1 tracking-widest">TUNISIE</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <h1 class="text-xl font-bold text-gray-800">منصة الحجوزات الصيفية</h1>
+                            <p class="text-green-600 font-bold tracking-wide mt-1">✓ تم تأكيد طلب الحجز بنجاح</p>
+                        </div>
+                        
+                        <div class="border-b-2 border-dashed border-gray-200 my-4"></div>
+                        
+                        <div class="space-y-4 text-sm text-gray-700">
+                            <div><span class="text-xs text-gray-400 block mb-1">اسم العميل:</span> <span class="font-bold text-base text-gray-900">${name}</span></div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div><span class="text-xs text-gray-400 block mb-1">رقم الهاتف:</span> <span class="font-semibold">${phone}</span></div>
+                                <div><span class="text-xs text-gray-400 block mb-1">الرقم الآلي:</span> <span class="font-semibold text-blue-600">${robot}</span></div>
+                            </div>
+                            
+                            <div class="p-3 bg-blue-50/50 rounded-xl border border-blue-100">
+                                <span class="text-xs font-bold text-blue-800 block mb-2">🏨 النزل المختارة (حسب الأولوية):</span>
+                                <ol class="list-decimal list-inside space-y-1 text-xs text-gray-800 font-medium">
+                                    <li>${h1}</li>
+                                    <li>${h2}</li>
+                                    <li>${h3}</li>
+                                </ol>
+                            </div>
+                            
+                            <div><span class="text-xs text-gray-400 block mb-1">نوع الغرفة المفضل:</span> <span class="font-semibold">${chambre}</span></div>
+                            
+                            <div class="grid grid-cols-2 gap-2 bg-gray-50 p-2 rounded-xl border border-gray-100">
+                                <div><span class="text-xs text-gray-400 block mb-1">تاريخ الدخول:</span> <span class="font-bold text-xs text-slate-800">${dateArrivee}</span></div>
+                                <div><span class="text-xs text-gray-400 block mb-1">تاريخ الخروج:</span> <span class="font-bold text-xs text-slate-800">${dateDepart}</span></div>
+                            </div>
+                            
+                            <div><span class="text-xs text-gray-400 block mb-1">عدد الأشخاص:</span> <span class="font-bold">${pax}</span>
+Envoyé
+Rédiger
+Écrire à
