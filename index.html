@@ -328,4 +328,37 @@
                                 </ol>
                             </div>
 
-                            <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 flex justify-be
+                            <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 flex justify-between items-center">
+                                <span class="text-xs font-bold text-orange-800">💰 المبلغ الإجمالي المحسوب:</span>
+                                <span class="font-black text-lg text-orange-600">${finalPrice}</span>
+                            </div>
+                            
+                            <div><span class="text-xs text-gray-400 block mb-1">نوع الغرفة المفضل:</span> <span class="font-semibold">${chambre}</span></div>
+                            
+                            <div class="grid grid-cols-2 gap-2 bg-gray-50 p-2 rounded-xl border border-gray-100">
+                                <div><span class="text-xs text-gray-400 block mb-1">تاريخ الدخول:</span> <span class="font-bold text-xs text-slate-800">${dateArrivee}</span></div>
+                                <div><span class="text-xs text-gray-400 block mb-1">تاريخ الخروج:</span> <span class="font-bold text-xs text-slate-800">${dateDepart}</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-b-2 border-dashed border-gray-200 my-4"></div>
+                        
+                        <button onclick="window.print()" class="w-full mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 rounded-xl shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all cursor-pointer">
+                            🖨️ طباعة الوصل (Ticket)
+                        </button>
+                    </div>
+                </body>
+                </html>`;
+                
+                const blob = new Blob([invoiceHTML], { type: 'text/html;charset=utf-8;' });
+                document.getElementById('recapLink').href = URL.createObjectURL(blob);
+                document.getElementById('recapSection').scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                alert("حدث خطأ في الاتصال، حاول مجدداً.");
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
